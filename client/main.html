@@ -1,0 +1,35 @@
+<head>
+  <title>myproject</title>
+</head>
+
+<body>
+  <h1>Welcome to Meteor!</h1>
+
+ {{> formsub}}
+  {{> info}}
+{{>reciveinfo}}
+</body>
+
+<template name="hello">
+  <button>订阅我吧</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+<template name="reciveinfo">
+    <div>
+        {{#each log}}
+         <p>{{name}}</p>
+        <p>{{age}}</p>
+            <p>{{tel}}</p>
+            <p>{{birth}}</p>
+        {{/each}}
+    </div>
+</template>
+<template name="info">
+  <h2>Learn Meteor!</h2>
+  <ul>
+    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
+    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
+    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
+    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
+  </ul>
+</template>
