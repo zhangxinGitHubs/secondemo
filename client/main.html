@@ -4,7 +4,6 @@
 
 <body>
   <h1>Welcome to Meteor!</h1>
-
  {{> formsub}}
 {{>reciveinfo}}
 </body>
@@ -16,10 +15,7 @@
 <template name="reciveinfo">
     <div>
         {{#each log}}
-         <p>{{name}}</p>
-        <p>{{age}}</p>
-            <p>{{tel}}</p>
-            <p>{{birth}}</p>
+        {{> everyinfo}}
         {{/each}}
     </div>
 </template>

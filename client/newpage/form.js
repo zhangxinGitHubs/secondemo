@@ -4,6 +4,7 @@
 Template.formsub.events({
     "submit form":function (e) {
         e.preventDefault();
+        var currentid=$(e.target).find('[name=id]').val();
         var name=$(e.target).find('[name=names]').val()
         var age=$(e.target).find('[name=age]').val()
         var tel=$(e.target).find('[name=tel]').val()
@@ -21,7 +22,15 @@ Template.formsub.events({
         }
         else
             {
-                Data.insert(info);
+                if(currentid!="")
+                {
+                    Data.update(currentid,info);
+                }
+                else
+                    {
+                        Data.insert(info);
+                    }
+                $(e.target).find('[name=id]').val("");
                 $(e.target).find('[name=names]').val("");
                 $(e.target).find('[name=age]').val("");
                 $(e.target).find('[name=tel]').val("");
